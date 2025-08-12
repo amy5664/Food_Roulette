@@ -20,4 +20,3 @@
 - CSS
 - JavaScript
 - CSV 데이터
-- Uvicorn
