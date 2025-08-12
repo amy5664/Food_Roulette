@@ -42,7 +42,9 @@ def _split_list(val: Optional[str]) -> List[str]:
     """
     if not val:
         return []
-    return [p.strip() for p in val.replace("/",",").split(",") if p.strip]
+    return [p.strip() for p in val.replace("/", ",").split(",") if p.strip()]
+
+
 
 # CSV 파일 읽어서 메뉴 데이터 리스트로 반환
 def load_data(path: str) -> List[Dict]:
@@ -59,7 +61,7 @@ def load_data(path: str) -> List[Dict]:
                 "id": int(id_str) if (id_str not in (None, "")) else None,
                 "name": name.strip(),
                 "category": (category or "").strip() or None,
-                "meal_times": _split_list(meals),
+                "meal_times": _normalize_meals(_split_list(meals)),
             }
             data.append(item)
     return data
