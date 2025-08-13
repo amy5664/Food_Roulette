@@ -40,52 +40,62 @@
 
         <!-- 필터 섹션 -->
         <div class="filter-section">
-            <div class="filter-group">
+            <div class="filter-group" id="categoryFilters">
                 <h3 class="filter-title">음식 종류별 고르기</h3>
                 <div class="filter-options">
                     <label class="filter-option">
-                        <input type="checkbox" value="베스트" checked>
+                        <input type="checkbox" value="분식">
                         <span class="checkbox-custom">✓</span>
-                        <span class="option-text">베스트</span>
+                        <span class="option-text">분식</span>
                     </label>
                     <label class="filter-option">
-                        <input type="checkbox" value="한식" checked>
+                        <input type="checkbox" value="한식">
                         <span class="checkbox-custom">✓</span>
                         <span class="option-text">한식</span>
                     </label>
                     <label class="filter-option">
-                        <input type="checkbox" value="중식" checked>
+                        <input type="checkbox" value="중식">
                         <span class="checkbox-custom">✓</span>
                         <span class="option-text">중식</span>
                     </label>
                     <label class="filter-option">
-                        <input type="checkbox" value="일식" checked>
+                        <input type="checkbox" value="일식">
                         <span class="checkbox-custom">✓</span>
                         <span class="option-text">일식</span>
                     </label>
                     <label class="filter-option">
-                        <input type="checkbox" value="양식" checked>
+                        <input type="checkbox" value="양식">
                         <span class="checkbox-custom">✓</span>
                         <span class="option-text">양식</span>
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" value="기타">
+                        <span class="checkbox-custom">✓</span>
+                        <span class="option-text">기타</span>
                     </label>
                 </div>
             </div>
 
-            <div class="filter-group">
-                <h3 class="filter-title">상황별 고르기</h3>
+            <div class="filter-group" id="mealFilters">
+                <div class="filter-header">
+                    <h3 class="filter-title">상황별 고르기</h3>
+                    <button class="filter-button-small" id="filterButton">
+                        <span class="filter-text">필터 적용</span>
+                    </button>
+                </div>
                 <div class="filter-options">
                     <label class="filter-option">
-                        <input type="checkbox" value="아침" checked>
+                        <input type="checkbox" value="아침">
                         <span class="checkbox-custom">✓</span>
                         <span class="option-text">아침</span>
                     </label>
                     <label class="filter-option">
-                        <input type="checkbox" value="점심" checked>
+                        <input type="checkbox" value="점심">
                         <span class="checkbox-custom">✓</span>
                         <span class="option-text">점심</span>
                     </label>
                     <label class="filter-option">
-                        <input type="checkbox" value="저녁" checked>
+                        <input type="checkbox" value="저녁">
                         <span class="checkbox-custom">✓</span>
                         <span class="option-text">저녁</span>
                     </label>
