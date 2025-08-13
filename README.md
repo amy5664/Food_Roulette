@@ -19,4 +19,5 @@
 - HTML
 - CSS
 - JavaScript
+- python
 - CSV 데이터
