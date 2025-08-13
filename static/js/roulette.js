@@ -217,7 +217,7 @@ function setupEventListeners() {
     // ⬇️ 추가: 초기화 버튼
     resetButton.addEventListener('click', () => {
         // 필터/커스텀 메뉴는 유지하고 화면/상태만 리셋
-        resetRoulette({ keepFilters: true, keepCustomMenus: false });
+        resetRoulette({ keepFilters: true, keepCustomMenus: true });
 
         // 완전 초기화가 필요하면 아래로 바꾸면 됨
         // resetRoulette({ keepFilters: false, keepCustomMenus: false });
@@ -347,9 +347,7 @@ document.getElementById('filterButton').addEventListener('click', async () => {
         alert('스핀 요청에 실패했습니다. 잠시 후 다시 시도하세요.');
     }
 
-});
-
-// ===== 전체 초기화(모두 지우기) =====
+    // ===== 전체 초기화(모두 지우기) =====
     function resetRoulette({ keepFilters = true, keepCustomMenus = true } = {}) {
         // 1) 회전 중단
         if (spinTimer) { clearTimeout(spinTimer); spinTimer = null; }
@@ -386,3 +384,5 @@ document.getElementById('filterButton').addEventListener('click', async () => {
         // 7) 다시 그리기
         redrawRoulette();
     }
+
+});
