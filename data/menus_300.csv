@@ -1,301 +1,301 @@
-id,name,category,meal_times,tags
-1,제육볶음 곁들임,한식,"breakfast,lunch,dinner",가볍게
-2,짬뽕,중식,"lunch,dinner","가볍게,고기,국물"
-3,텐동,일식,"lunch,dinner","가볍게,채소"
-4,라자냐 곱배기,양식,"lunch,dinner","달달,푸짐하게"
-5,떡볶이,분식,"breakfast,lunch","채소,담백,빨리"
-6,샐러드볼 세트,기타,"breakfast,lunch,dinner",푸짐하게
-7,제육볶음 스페셜,한식,"breakfast,lunch,dinner",달달
-8,짬뽕,중식,"lunch,dinner","달달,고기,국물"
-9,규동,일식,"lunch,dinner","밥,고기"
-10,스테이크,양식,"lunch,dinner",채소
-11,튀김모둠 곱배기,분식,"breakfast,lunch","채소,빨리"
-12,부리또 특,기타,"breakfast,lunch,dinner","가볍게,고기"
-13,보쌈,한식,"breakfast,lunch,dinner",고기
-14,짬뽕,중식,"lunch,dinner","달달,푸짐하게,고기,국물"
-15,사케동,일식,"lunch,dinner","밥,고기"
-16,리소토 특,양식,"lunch,dinner",
-17,쫄면 스몰,분식,"breakfast,lunch","달달,가볍게,면,빨리"
-18,포케,기타,"breakfast,lunch,dinner","밥,채소"
-19,갈비탕,한식,"breakfast,lunch,dinner",국물
-20,유산슬,중식,"lunch,dinner","가볍게,담백"
-21,규카츠 세트,일식,"lunch,dinner",가볍게
-22,피자,양식,"lunch,dinner",
-23,치즈돈까스,분식,"breakfast,lunch","매콤,빨리"
-24,부리또,기타,"breakfast,lunch,dinner","가볍게,담백,고기"
-25,설렁탕 하프,한식,"breakfast,lunch,dinner","매콤,국물"
-26,짬뽕,중식,"lunch,dinner","가볍게,국물"
-27,돈카츠 스페셜,일식,"lunch,dinner",고기
-28,봉골레 스페셜,양식,"lunch,dinner",
-29,쫄면 곁들임,분식,"breakfast,lunch","면,빨리"
-30,쌀국수 스페셜,기타,"breakfast,lunch,dinner","가볍게,고기,국물,면"
-31,설렁탕,한식,"breakfast,lunch,dinner","채소,국물"
-32,마라탕 DX,중식,"lunch,dinner","가볍게,채소,국물"
-33,우동 콤보,일식,"lunch,dinner","가볍게,채소,국물,면"
-34,피자,양식,"lunch,dinner",푸짐하게
-35,비빔국수 하프,분식,"breakfast,lunch","매콤,면,빨리,가볍게,국물"
-36,커리 콤보,기타,"breakfast,lunch,dinner",
-37,육회비빔밥,한식,"breakfast,lunch,dinner","밥,채소"
-38,우동,중식,"lunch,dinner","고기,국물,면"
-39,우동 DX,일식,"lunch,dinner","푸짐하게,고기,국물,면"
-40,파스타 정식,양식,"lunch,dinner","채소,면"
-41,치즈돈까스,분식,"breakfast,lunch",빨리
-42,쌀국수 스몰,기타,"breakfast,lunch,dinner","고기,국물,면"
-43,낙지볶음,한식,"breakfast,lunch,dinner","매콤,고기,푸짐하게"
-44,깐풍기 세트,중식,"lunch,dinner","담백,고기"
-45,우동,일식,"lunch,dinner","채소,국물,면"
-46,라자냐,양식,"lunch,dinner",고기
-47,라면 라지,분식,"breakfast,lunch","면,빨리"
-48,난 플레이트 세트,기타,"breakfast,lunch,dinner",채소
-49,육회비빔밥 라지,한식,"breakfast,lunch,dinner","밥,채소"
-50,우동,중식,"lunch,dinner","달달,채소,국물,면"
-51,가라아게 정식,일식,"lunch,dinner",
-52,리소토,양식,"lunch,dinner",고기
-53,라면 곱배기,분식,"breakfast,lunch","푸짐하게,면,빨리"
-54,파니니,기타,"breakfast,lunch,dinner","고기,푸짐하게"
-55,제육볶음,한식,"breakfast,lunch,dinner",고기
-56,짬뽕,중식,"lunch,dinner","채소,국물"
-57,규카츠,일식,"lunch,dinner",
-58,알리오올리오,양식,"lunch,dinner","담백,고기"
-59,라면,분식,"breakfast,lunch","고기,푸짐하게,면,빨리,담백"
-60,난 플레이트 특,기타,"breakfast,lunch,dinner","달달,고기,푸짐하게"
-61,보쌈 콤보,한식,"breakfast,lunch,dinner",
-62,마라탕,중식,"lunch,dinner",국물
-63,돈카츠,일식,"lunch,dinner",담백
-64,봉골레,양식,"lunch,dinner",
-65,치즈돈까스,분식,"breakfast,lunch","달달,채소,빨리"
-66,타코 스페셜,기타,"breakfast,lunch,dinner","달달,고기"
-67,냉면 하프,한식,"breakfast,lunch,dinner","가볍게,면"
-68,짜장면,중식,"lunch,dinner","달달,면"
-69,규카츠,일식,"lunch,dinner","담백,푸짐하게"
-70,피자,양식,"lunch,dinner",가볍게
-71,비빔라면 DX,분식,"breakfast,lunch","채소,면,빨리"
-72,샐러드볼,기타,"breakfast,lunch,dinner",채소
-73,김치찌개,한식,"breakfast,lunch,dinner","달달,국물"
-74,깐풍기 하프,중식,"lunch,dinner",채소
-75,규카츠 곱배기,일식,"lunch,dinner",달달
-76,봉골레 스페셜,양식,"lunch,dinner","달달,채소"
-77,비빔국수 곱배기,분식,"breakfast,lunch","빨리,국물,면"
-78,파니니,기타,"breakfast,lunch,dinner","매콤,고기"
-79,콩나물국밥,한식,"breakfast,lunch,dinner","밥,담백,국물"
-80,마라샹궈,중식,"lunch,dinner","가볍게,고기"
-81,돈카츠 스페셜,일식,"lunch,dinner",
-82,피자,양식,"lunch,dinner",담백
-83,라면 정식,분식,"breakfast,lunch","달달,고기,면,빨리"
-84,샐러드볼 스페셜,기타,"breakfast,lunch,dinner","달달,가볍게,고기"
-85,낙지볶음,한식,"breakfast,lunch,dinner","매콤,채소,푸짐하게"
-86,난자완스,중식,"lunch,dinner","달달,채소"
-87,사케동,일식,"lunch,dinner","밥,매콤"
-88,그릴치킨,양식,"lunch,dinner","달달,가볍게,채소"
-89,라면 곁들임,분식,"breakfast,lunch","면,빨리"
-90,케밥,기타,"breakfast,lunch,dinner","밥,고기"
-91,불고기,한식,"breakfast,lunch,dinner",푸짐하게
-92,마라탕,중식,"lunch,dinner","채소,국물"
-93,가라아게 정식 정식,일식,"lunch,dinner","매콤,고기"
-94,그릴치킨,양식,"lunch,dinner","채소,푸짐하게"
-95,쫄면,분식,"breakfast,lunch","매콤,면,빨리"
-96,부리또,기타,"breakfast,lunch,dinner",
-97,된장찌개,한식,"breakfast,lunch,dinner","고기,국물"
-98,양장피,중식,"lunch,dinner",채소
-99,라멘 하프,일식,"lunch,dinner","고기,국물,면"
-100,리소토 정식,양식,"lunch,dinner","가볍게,고기"
-101,쫄면,분식,"breakfast,lunch","채소,면,빨리"
-102,난 플레이트,기타,"breakfast,lunch,dinner","가볍게,채소"
-103,감자탕,한식,"breakfast,lunch,dinner","달달,국물"
-104,난자완스,중식,"lunch,dinner",채소
-105,가라아게 정식,일식,"lunch,dinner","달달,채소,푸짐하게"
-106,봉골레,양식,"lunch,dinner",담백
-107,치즈라면,분식,"breakfast,lunch","면,빨리"
-108,타코,기타,"breakfast,lunch,dinner",채소
-109,순두부찌개,한식,"breakfast,lunch,dinner",국물
-110,유산슬,중식,"lunch,dinner",푸짐하게
-111,가츠동,일식,"lunch,dinner",
-112,파스타 정식,양식,"lunch,dinner","고기,담백,면"
-113,튀김모둠 콤보,분식,"breakfast,lunch",빨리
-114,난 플레이트,기타,"breakfast,lunch,dinner","가볍게,채소"
-115,닭갈비 스페셜,한식,"breakfast,lunch,dinner","채소,푸짐하게"
-116,탕수육,중식,"lunch,dinner","푸짐하게,국물"
-117,사케동,일식,"lunch,dinner","밥,가볍게"
-118,그릴치킨,양식,"lunch,dinner",매콤
-119,튀김모둠,분식,"breakfast,lunch","달달,푸짐하게,빨리"
-120,분짜,기타,"breakfast,lunch,dinner",담백
-121,곱창전골,한식,"breakfast,lunch,dinner","푸짐하게,채소,국물"
-122,짬뽕,중식,"lunch,dinner","담백,국물"
-123,가츠동,일식,"lunch,dinner","채소,담백,푸짐하게"
-124,그릴치킨,양식,"lunch,dinner",가볍게
-125,비빔국수 콤보,분식,"breakfast,lunch","채소,푸짐하게,빨리,면,국물"
-126,분짜 정식,기타,"breakfast,lunch,dinner","가볍게,채소"
-127,곱창전골,한식,"breakfast,lunch,dinner",국물
-128,짬뽕,중식,"lunch,dinner","채소,담백,국물"
-129,가라아게 정식,일식,"lunch,dinner","채소,담백"
-130,그릴치킨 세트,양식,"lunch,dinner",
-131,떡볶이 스몰,분식,"breakfast,lunch","담백,고기,빨리"
-132,난 플레이트 특,기타,"breakfast,lunch,dinner",가볍게
-133,비빔밥 정식,한식,"breakfast,lunch,dinner",밥
-134,짜장면 정식,중식,"lunch,dinner","매콤,채소,면"
-135,텐동,일식,"lunch,dinner",가볍게
-136,오믈렛,양식,"lunch,dinner",고기
-137,쫄면,분식,"breakfast,lunch","매콤,채소,면,빨리"
-138,샐러드볼,기타,"breakfast,lunch,dinner",
-139,수육,한식,"breakfast,lunch,dinner","담백,국물"
-140,양장피,중식,"lunch,dinner",달달
-141,가츠동,일식,"lunch,dinner",고기
-142,알리오올리오 세트,양식,"lunch,dinner",푸짐하게
-143,치즈돈까스,분식,"breakfast,lunch",빨리
-144,타코,기타,"breakfast,lunch,dinner",담백
-145,불고기,한식,"breakfast,lunch,dinner",채소
-146,난자완스 라지,중식,"lunch,dinner",
-147,라멘,일식,"lunch,dinner","달달,가볍게,국물,면"
-148,라자냐 특,양식,"lunch,dinner",담백
-149,순대,분식,"breakfast,lunch","달달,채소,빨리"
-150,샐러드볼,기타,"breakfast,lunch,dinner","가볍게,채소"
-151,냉면,한식,"breakfast,lunch,dinner","매콤,가볍게,채소,면"
-152,양장피,중식,"lunch,dinner",채소
-153,돈카츠,일식,"lunch,dinner","담백,고기"
-154,봉골레,양식,"lunch,dinner",채소
-155,떡볶이,분식,"breakfast,lunch",빨리
-156,타코 라지,기타,"breakfast,lunch,dinner",푸짐하게
-157,순두부찌개,한식,"breakfast,lunch,dinner","채소,국물"
-158,마라샹궈 특,중식,"lunch,dinner",채소
-159,규동,일식,"lunch,dinner","밥,가볍게,매콤"
-160,피자,양식,"lunch,dinner",채소
-161,치즈라면 세트,분식,"breakfast,lunch","면,빨리"
-162,부리또,기타,"breakfast,lunch,dinner","달달,고기"
-163,찜닭,한식,"breakfast,lunch,dinner",
-164,짜장면,중식,"lunch,dinner","푸짐하게,면"
-165,가라아게 정식 스몰,일식,"lunch,dinner","채소,담백"
-166,오믈렛,양식,"lunch,dinner",달달
-167,치즈돈까스,분식,"breakfast,lunch","가볍게,채소,빨리"
-168,샐러드볼,기타,"breakfast,lunch,dinner","달달,채소"
-169,불고기,한식,"breakfast,lunch,dinner",고기
-170,양장피,중식,"lunch,dinner",매콤
-171,규동,일식,"lunch,dinner","달달,밥,가볍게"
-172,피자,양식,"lunch,dinner",달달
-173,치즈돈까스 라지,분식,"breakfast,lunch","가볍게,채소,빨리"
-174,난 플레이트,기타,"breakfast,lunch,dinner",고기
-175,콩나물국밥,한식,"breakfast,lunch,dinner","밥,국물"
-176,유산슬,중식,"lunch,dinner",
-177,규카츠 곁들임,일식,"lunch,dinner",매콤
-178,오믈렛,양식,"lunch,dinner","채소,담백"
-179,순대,분식,"breakfast,lunch","채소,빨리"
-180,포케 라지,기타,"breakfast,lunch,dinner","밥,푸짐하게"
-181,감자탕,한식,"breakfast,lunch,dinner","푸짐하게,채소,국물"
-182,유산슬,중식,"lunch,dinner",가볍게
-183,텐동,일식,"lunch,dinner",달달
-184,햄버거,양식,"lunch,dinner",담백
-185,튀김모둠 정식,분식,"breakfast,lunch","채소,담백,푸짐하게,빨리"
-186,분짜,기타,"breakfast,lunch,dinner",채소
-187,된장찌개,한식,"breakfast,lunch,dinner","매콤,고기,국물"
-188,난자완스,중식,"lunch,dinner","채소,푸짐하게"
-189,가라아게 정식,일식,"lunch,dinner",고기
-190,파스타,양식,"lunch,dinner",면
-191,비빔국수,분식,"breakfast,lunch","매콤,빨리,국물,면"
-192,부리또 스몰,기타,"breakfast,lunch,dinner",고기
-193,냉면,한식,"breakfast,lunch,dinner","가볍게,고기,면"
-194,양장피 세트,중식,"lunch,dinner",담백
-195,초밥,일식,"lunch,dinner","밥,고기,푸짐하게"
-196,피자,양식,"lunch,dinner",고기
-197,튀김모둠,분식,"breakfast,lunch","가볍게,채소,담백,빨리"
-198,샐러드볼 특,기타,"breakfast,lunch,dinner",매콤
-199,육회비빔밥 스몰,한식,"breakfast,lunch,dinner","밥,채소,매콤"
-200,양장피 곁들임,중식,"lunch,dinner","달달,고기"
-201,우동,일식,"lunch,dinner","국물,면"
-202,라자냐,양식,"lunch,dinner",푸짐하게
-203,튀김모둠,분식,"breakfast,lunch","가볍게,채소,빨리"
-204,쌀국수 콤보,기타,"breakfast,lunch,dinner","국물,면"
-205,순두부찌개 라지,한식,"breakfast,lunch,dinner",국물
-206,우동,중식,"lunch,dinner","고기,국물,면"
-207,초밥,일식,"lunch,dinner","밥,고기,매콤"
-208,라자냐,양식,"lunch,dinner",담백
-209,라면 곁들임,분식,"breakfast,lunch","가볍게,면,빨리"
-210,커리,기타,"breakfast,lunch,dinner",
-211,김치찌개,한식,"breakfast,lunch,dinner","푸짐하게,채소,국물"
-212,마라탕,중식,"lunch,dinner","채소,국물"
-213,가라아게 정식,일식,"lunch,dinner",푸짐하게
-214,봉골레 스몰,양식,"lunch,dinner","가볍게,고기"
-215,튀김모둠 곁들임,분식,"breakfast,lunch",빨리
-216,부리또,기타,"breakfast,lunch,dinner",
-217,냉면,한식,"breakfast,lunch,dinner","푸짐하게,면"
-218,탕수육,중식,"lunch,dinner","푸짐하게,국물,매콤"
-219,가츠동 곁들임,일식,"lunch,dinner",매콤
-220,스테이크 곁들임,양식,"lunch,dinner",고기
-221,튀김모둠,분식,"breakfast,lunch","달달,빨리"
-222,난 플레이트,기타,"breakfast,lunch,dinner","달달,가볍게"
-223,육회비빔밥,한식,"breakfast,lunch,dinner","밥,채소"
-224,난자완스 하프,중식,"lunch,dinner","매콤,고기"
-225,가츠동,일식,"lunch,dinner","담백,푸짐하게"
-226,햄버거,양식,"lunch,dinner",담백
-227,비빔라면,분식,"breakfast,lunch","채소,면,빨리"
-228,부리또,기타,"breakfast,lunch,dinner",푸짐하게
-229,된장찌개,한식,"breakfast,lunch,dinner","채소,국물"
-230,마라샹궈,중식,"lunch,dinner",담백
-231,사케동,일식,"lunch,dinner","달달,밥,푸짐하게"
-232,스테이크,양식,"lunch,dinner",
-233,라면 콤보,분식,"breakfast,lunch","면,빨리"
-234,커리 곁들임,기타,"breakfast,lunch,dinner",
-235,갈비탕 하프,한식,"breakfast,lunch,dinner","담백,국물"
-236,탕수육,중식,"lunch,dinner","달달,채소,국물"
-237,우동,일식,"lunch,dinner","채소,국물,면"
-238,알리오올리오,양식,"lunch,dinner",
-239,순대,분식,"breakfast,lunch","고기,빨리"
-240,타코,기타,"breakfast,lunch,dinner","달달,채소"
-241,된장찌개 콤보,한식,"breakfast,lunch,dinner","푸짐하게,채소,국물"
-242,마라탕 세트,중식,"lunch,dinner",국물
-243,라멘,일식,"lunch,dinner","담백,국물,면"
-244,봉골레,양식,"lunch,dinner","매콤,가볍게,고기"
-245,떡볶이 곱배기,분식,"breakfast,lunch","담백,푸짐하게,빨리"
-246,케밥,기타,"breakfast,lunch,dinner","밥,가볍게,채소"
-247,제육볶음,한식,"breakfast,lunch,dinner","매콤,채소"
-248,난자완스 DX,중식,"lunch,dinner",
-249,돈카츠,일식,"lunch,dinner",고기
-250,파스타,양식,"lunch,dinner","달달,면"
-251,쫄면 곱배기,분식,"breakfast,lunch","고기,면,빨리"
-252,파니니 라지,기타,"breakfast,lunch,dinner","고기,푸짐하게"
-253,낙지볶음 정식,한식,"breakfast,lunch,dinner","매콤,푸짐하게"
-254,짜장면,중식,"lunch,dinner","푸짐하게,면,매콤"
-255,가츠동 라지,일식,"lunch,dinner",
-256,오믈렛 스몰,양식,"lunch,dinner",매콤
-257,김밥,분식,"breakfast,lunch","밥,빨리"
-258,타코,기타,"breakfast,lunch,dinner",매콤
-259,제육볶음,한식,"breakfast,lunch,dinner",고기
-260,짬뽕 정식,중식,"lunch,dinner","고기,국물"
-261,가츠동,일식,"lunch,dinner",채소
-262,스테이크,양식,"lunch,dinner",
-263,치즈라면 특,분식,"breakfast,lunch","푸짐하게,담백,면,빨리"
-264,커리,기타,"breakfast,lunch,dinner",
-265,낙지볶음,한식,"breakfast,lunch,dinner","달달,채소"
-266,탕수육,중식,"lunch,dinner","푸짐하게,국물"
-267,가츠동,일식,"lunch,dinner","매콤,가볍게"
-268,라자냐 DX,양식,"lunch,dinner","가볍게,고기"
-269,쫄면 스몰,분식,"breakfast,lunch","가볍게,채소,면,빨리"
-270,난 플레이트,기타,"breakfast,lunch,dinner",달달
-271,낙지볶음,한식,"breakfast,lunch,dinner",푸짐하게
-272,유산슬,중식,"lunch,dinner",
-273,돈카츠,일식,"lunch,dinner",
-274,그릴치킨 스몰,양식,"lunch,dinner",담백
-275,치즈라면 스페셜,분식,"breakfast,lunch","면,빨리"
-276,부리또 DX,기타,"breakfast,lunch,dinner",가볍게
-277,순두부찌개,한식,"breakfast,lunch,dinner","가볍게,고기,국물"
-278,짜장면 스페셜,중식,"lunch,dinner",면
-279,가라아게 정식,일식,"lunch,dinner",채소
-280,오믈렛,양식,"lunch,dinner",
-281,튀김모둠 세트,분식,"breakfast,lunch","채소,푸짐하게,빨리"
-282,분짜 라지,기타,"breakfast,lunch,dinner","매콤,가볍게"
-283,된장찌개 라지,한식,"breakfast,lunch,dinner",국물
-284,짬뽕,중식,"lunch,dinner",국물
-285,우동,일식,"lunch,dinner","매콤,푸짐하게,국물,면"
-286,그릴치킨,양식,"lunch,dinner","매콤,푸짐하게"
-287,비빔라면,분식,"breakfast,lunch","면,빨리"
-288,포케 DX,기타,"breakfast,lunch,dinner",밥
-289,된장찌개 곱배기,한식,"breakfast,lunch,dinner",국물
-290,마라샹궈 곁들임,중식,"lunch,dinner",푸짐하게
-291,가츠동 콤보,일식,"lunch,dinner","매콤,고기"
-292,봉골레 세트,양식,"lunch,dinner",
-293,순대 특,분식,"breakfast,lunch","고기,빨리"
-294,부리또,기타,"breakfast,lunch,dinner",채소
-295,낙지볶음,한식,"breakfast,lunch,dinner",채소
-296,마라탕 특,중식,"lunch,dinner","고기,국물"
-297,규동 곱배기,일식,"lunch,dinner","밥,고기,매콤"
-298,봉골레 콤보,양식,"lunch,dinner",
-299,치즈돈까스 스몰,분식,"breakfast,lunch","달달,푸짐하게,빨리"
-300,케밥,기타,"breakfast,lunch,dinner","밥,채소"
+﻿id,name,category,meal_times,tags
+1,야키토리,일식,"breakfast,lunch,dinner",
+2,떡라면,분식,"breakfast,lunch,dinner","가볍게,담백,고기"
+3,훠궈,중식,"lunch,dinner","채소,빨리"
+4,부리또 ,기타,"breakfast,lunch,dinner","가볍게,고기"
+5,마르게리타피자,양식,"lunch,dinner","고기,푸짐하게"
+6,페퍼로니피자,양식,"lunch,dinner","채소,면,빨리"
+7,시오라멘,일식,"breakfast,lunch,dinner","채소,담백,빨리"
+8,오믈렛 ,양식,"lunch,dinner",매콤
+9,샐러드볼 ,기타,"breakfast,lunch,dinner",푸짐하게
+10,오코노미야키,일식,"lunch,dinner","채소,면"
+11,잉어빵,분식,"breakfast,lunch,dinner","매콤,빨리"
+12,마라샹궈,중식,"lunch,dinner","가볍게,고기"
+13,키슈,양식,"lunch,dinner",채소
+14,라면,분식,"breakfast,lunch","고기,푸짐하게,면,빨리,담백"
+15,에그샌드,일식,"lunch,dinner","고기,국물"
+16,포테이토피자,양식,"lunch,dinner",채소
+17,타말레,기타,"breakfast,lunch,dinner","담백,국물"
+18,아보카도버거,양식,"lunch,dinner",담백
+19,새우볶음밥,중식,"breakfast,lunch,dinner","고기,푸짐하게"
+20,잡채밥,중식,"breakfast,lunch,dinner",푸짐하게
+21,분짜 ,기타,"breakfast,lunch,dinner","가볍게,채소"
+22,규동 ,일식,"lunch,dinner","밥,고기,매콤"
+23,치즈스틱,분식,"breakfast,lunch",담백
+24,튀김만두,분식,"breakfast,lunch,dinner","고기,국물,면"
+25,비빔라면,분식,"breakfast,lunch","채소,면,빨리"
+26,제육볶음,한식,"breakfast,lunch,dinner",고기
+27,사모사,기타,"lunch,dinner","푸짐하게,채소,국물"
+28,감바스알아히요,기타,"lunch,dinner","담백,고기"
+29,멘보샤,중식,"lunch,dinner",면
+30,김치만두,분식,"lunch,dinner",고기
+31,규카츠 ,일식,"lunch,dinner",가볍게
+32,소룡포,중식,"lunch,dinner",
+33,낙지볶음,한식,"breakfast,lunch,dinner","매콤,고기,푸짐하게"
+34,쌀국수 ,기타,"breakfast,lunch,dinner","가볍게,고기,국물,면"
+35,바게트,양식,"breakfast,lunch",고기
+36,수제비,한식,"lunch,dinner","매콤,빨리,국물,면"
+37,스테이크,양식,"lunch,dinner",채소
+38,마라샹궈 ,중식,"lunch,dinner",채소
+39,보쌈 ,한식,"breakfast,lunch,dinner",
+40,닭갈비 ,한식,"breakfast,lunch,dinner","채소,푸짐하게"
+41,치즈돈까스 ,분식,"breakfast,lunch","가볍게,채소,빨리"
+42,분짜,기타,"breakfast,lunch,dinner",담백
+43,수블라키,기타,"lunch,dinner",고기
+44,케밥,기타,"breakfast,lunch,dinner","밥,고기"
+45,곱창전골,한식,"breakfast,lunch,dinner","푸짐하게,채소,국물"
+46,쫄면,분식,"breakfast,lunch","매콤,면,빨리"
+47,등심스테이크,양식,"lunch,dinner",
+48,더블치즈버거,양식,"lunch,dinner",채소
+49,짬뽕 ,중식,"lunch,dinner","고기,국물"
+50,클럽샌드위치,양식,"lunch,dinner","매콤,가볍게,채소,면"
+51,멘치카츠,일식,"lunch,dinner",채소
+52,마파두부,중식,"breakfast,lunch","가볍게,고기,국물,면"
+53,찐만두,분식,"breakfast,lunch,dinner","가볍게,담백"
+54,튀김모둠,분식,"breakfast,lunch","달달,푸짐하게,빨리"
+55,망고라씨,기타,"lunch,dinner",
+56,팔라펠,기타,"breakfast,lunch,dinner","담백,고기,빨리"
+57,비빔국수,분식,"breakfast,lunch","매콤,빨리,국물,면"
+58,찜닭,한식,"breakfast,lunch,dinner",
+59,호또,일식,"lunch,dinner","매콤,고기"
+60,설렁탕,한식,"breakfast,lunch,dinner","채소,국물"
+61,버거,양식,"breakfast,lunch,dinner","채소,푸짐하게"
+62,그릴치킨,양식,"lunch,dinner","달달,가볍게,채소"
+63,규동,일식,"lunch,dinner","밥,고기"
+64,냉우동,일식,"lunch,dinner","채소,면,빨리"
+65,가라아게,일식,"breakfast,lunch,dinner",채소
+66,육회비빔밥,한식,"breakfast,lunch,dinner","밥,채소"
+67,돈카츠 ,일식,"lunch,dinner",고기
+68,고기만두,분식,"lunch,dinner","가볍게,채소,국물,면"
+69,콩나물국밥,한식,"breakfast,lunch,dinner","밥,담백,국물"
+70,스프카레,일식,"breakfast,lunch,dinner","푸짐하게,채소,국물"
+71,낙지볶음 ,한식,"breakfast,lunch,dinner","매콤,푸짐하게"
+72,뼈해장국,한식,"lunch,dinner","고기,푸짐하게"
+73,고르곤졸라피자,양식,"breakfast,lunch","가볍게,담백,고기"
+74,스시,일식,"breakfast,lunch,dinner","가볍게,고기"
+75,육개장,한식,"lunch,dinner","밥,담백,국물"
+76,비리야니,기타,"breakfast,lunch,dinner",푸짐하게
+77,짜장면 ,중식,"lunch,dinner","매콤,채소,면"
+78,수육,한식,"breakfast,lunch,dinner","담백,국물"
+79,라멘 ,일식,"lunch,dinner","고기,국물,면"
+80,카프카케밥,기타,"lunch,dinner","가볍게,고기,국물,면"
+81,차슈,중식,"breakfast,lunch,dinner",
+82,고추잡채,중식,"lunch,dinner",고기
+83,치즈돈까스,분식,"breakfast,lunch","매콤,빨리"
+84,참치김밥,한식,"breakfast,lunch","밥,담백,국물"
+85,그릴치킨 ,양식,"lunch,dinner",
+86,빈대떡,한식,"breakfast,lunch,dinner",담백
+87,간장게장,한식,"breakfast,lunch",국물
+88,가츠동,일식,"lunch,dinner",
+89,갈비탕,한식,"breakfast,lunch,dinner",국물
+90,보쌈,한식,"breakfast,lunch,dinner",고기
+91,히야시추카,일식,"lunch,dinner","밥,고기"
+92,커리,기타,"breakfast,lunch,dinner",
+93,감자탕,한식,"breakfast,lunch,dinner","달달,국물"
+94,토마토파스타,양식,"breakfast,lunch,dinner","담백,고기"
+95,난 플레이트 ,기타,"breakfast,lunch,dinner",채소
+96,유산슬,중식,"lunch,dinner","가볍게,담백"
+97,가키프라이,일식,"lunch,dinner","채소,빨리"
+98,깐풍기,중식,"breakfast,lunch,dinner","달달,푸짐하게"
+99,자이로,기타,"lunch,dinner",
+100,난 플레이트,기타,"breakfast,lunch,dinner","가볍게,채소"
+101,치즈케이크,양식,"lunch,dinner","밥,채소"
+102,치즈라면,분식,"breakfast,lunch","면,빨리"
+103,우동,중식,"lunch,dinner","고기,국물,면"
+104,삿포로라멘,일식,"lunch,dinner",푸짐하게
+105,해물라면,분식,"breakfast,lunch",
+106,콤비네이션피자,양식,"breakfast,lunch,dinner","고기,빨리"
+107,꿔바로우,중식,"breakfast,lunch,dinner","가볍게,고기"
+108,피자,양식,"lunch,dinner",
+109,미소라멘,일식,"lunch,dinner",담백
+110,파스타,양식,"lunch,dinner",면
+111,부대찌개,한식,"breakfast,lunch,dinner",
+112,제육컵밥,분식,"lunch,dinner",
+113,난자완스 ,중식,"lunch,dinner",
+114,호두과자,분식,"breakfast,lunch,dinner",국물
+115,튀김,분식,"breakfast,lunch,dinner","매콤,면,빨리,가볍게,국물"
+116,충무김밥,한식,"breakfast,lunch,dinner","담백,고기"
+117,칠리새우,중식,"lunch,dinner","달달,가볍게,면,빨리"
+118,카프레제,기타,"lunch,dinner",채소
+119,돈코츠라멘,일식,"breakfast,lunch,dinner","달달,가볍게,면,빨리"
+120,푸딩,양식,"lunch,dinner","가볍게,채소"
+121,김치찌개,한식,"breakfast,lunch,dinner","달달,국물"
+122,야키소바,일식,"breakfast,lunch,dinner",담백
+123,광어초밥,일식,"lunch,dinner",국물
+124,파인애플볶음밥,중식,"breakfast,lunch,dinner","면,빨리"
+125,샤오롱바오,중식,"breakfast,lunch,dinner","밥,채소"
+126,치즈떡볶이,분식,"breakfast,lunch",
+127,육회비빔밥 ,한식,"breakfast,lunch,dinner","밥,채소"
+128,양념게장,한식,"lunch,dinner",고기
+129,니쿠자가,일식,"breakfast,lunch","달달,가볍게,국물,면"
+130,나초,기타,"lunch,dinner",채소
+131,짬뽕밥,중식,"breakfast,lunch,dinner","밥,담백,국물"
+132,순대 ,분식,"breakfast,lunch","고기,빨리"
+133,삼선짬뽕,중식,"lunch,dinner",
+134,호떡,한식,"breakfast,lunch,dinner","달달,면"
+135,후무스,기타,"breakfast,lunch,dinner","면,빨리"
+136,라따뚜이,기타,"lunch,dinner","담백,고기"
+137,마라볶음면,중식,"breakfast,lunch,dinner","매콤,면,빨리"
+138,니기리,일식,"lunch,dinner","면,빨리"
+139,에비후라이,일식,"lunch,dinner","가볍게,고기,국물"
+140,텐동,일식,"lunch,dinner","가볍게,채소"
+141,매운탕,한식,"breakfast,lunch","푸짐하게,채소,국물"
+142,라조기,중식,"lunch,dinner","담백,국물"
+143,카레우동,일식,"lunch,dinner",매콤
+144,동태탕,한식,"breakfast,lunch,dinner",가볍게
+145,치즈버거,양식,"breakfast,lunch,dinner",매콤
+146,치킨마요컵밥,분식,"breakfast,lunch,dinner",
+147,전,한식,"lunch,dinner",담백
+148,탕수육,중식,"lunch,dinner","푸짐하게,국물"
+149,커리 ,기타,"breakfast,lunch,dinner",
+150,오믈렛,양식,"lunch,dinner",고기
+151,피타,기타,"lunch,dinner",매콤
+152,파니니 ,기타,"breakfast,lunch,dinner","고기,푸짐하게"
+153,수프,양식,"lunch,dinner",
+154,삼선짜장,중식,"breakfast,lunch",
+155,포르케타,기타,"breakfast,lunch","달달,가볍게,채소"
+156,피카츄핫도그,분식,"breakfast,lunch,dinner","매콤,고기,푸짐하게"
+157,크레페,양식,"breakfast,lunch","면,빨리"
+158,양장피,중식,"lunch,dinner",채소
+159,츠케멘,일식,"breakfast,lunch,dinner","가볍게,고기,국물"
+160,알리오올리오 ,양식,"lunch,dinner",푸짐하게
+161,바베큐피자,양식,"lunch,dinner","가볍게,채소"
+162,깐쇼새우,중식,"breakfast,lunch",담백
+163,리소토 ,양식,"lunch,dinner",
+164,라자냐,양식,"lunch,dinner",고기
+165,비빔국수 ,분식,"breakfast,lunch","매콤,면,빨리,가볍게,국물"
+166,춘권,중식,"breakfast,lunch,dinner",
+167,치킨커리,기타,"breakfast,lunch","담백,고기,빨리"
+168,고구마돈까스,분식,"breakfast,lunch,dinner","담백,국물"
+169,중국냉면,중식,"breakfast,lunch,dinner","달달,가볍게,면,빨리"
+170,냉면 ,한식,"breakfast,lunch,dinner","가볍게,면"
+171,햄버거,양식,"lunch,dinner",담백
+172,시푸드피자,양식,"breakfast,lunch","담백,국물"
+173,군만두,분식,"breakfast,lunch",채소
+174,파니니,기타,"breakfast,lunch,dinner","고기,푸짐하게"
+175,냉면,한식,"breakfast,lunch,dinner","매콤,가볍게,채소,면"
+176,야채튀김,분식,"breakfast,lunch,dinner","달달,국물"
+177,막국수,한식,"breakfast,lunch,dinner",
+178,마라탕 ,중식,"lunch,dinner","가볍게,채소,국물"
+179,아사이볼,기타,"lunch,dinner",매콤
+180,단팥빵,중식,"breakfast,lunch","고기,푸짐하게"
+181,나베,일식,"breakfast,lunch","매콤,채소,면"
+182,제육볶음 ,한식,"breakfast,lunch,dinner",가볍게
+183,팟타이,기타,"breakfast,lunch,dinner","고기,푸짐하게"
+184,옐로커리,기타,"breakfast,lunch,dinner",가볍게
+185,순두부찌개 ,한식,"breakfast,lunch,dinner",국물
+186,새우튀김,분식,"lunch,dinner","가볍게,채소"
+187,비빔만두,분식,"breakfast,lunch,dinner",고기
+188,함바그,일식,"breakfast,lunch,dinner",채소
+189,양장피 ,중식,"lunch,dinner",담백
+190,라면 ,분식,"breakfast,lunch","면,빨리"
+191,불고기,한식,"breakfast,lunch,dinner",푸짐하게
+192,간짜장,중식,"breakfast,lunch,dinner","밥,푸짐하게"
+193,BLT샌드위치,양식,"breakfast,lunch,dinner","달달,푸짐하게,빨리"
+194,연어초밥,일식,"lunch,dinner",채소
+195,컵밥,분식,"breakfast,lunch,dinner","가볍게,담백"
+196,사케동,일식,"lunch,dinner","밥,고기"
+197,무사카,기타,"breakfast,lunch,dinner","면,빨리"
+198,김말이튀김,분식,"breakfast,lunch","면,빨리"
+199,우동 ,일식,"lunch,dinner","가볍게,채소,국물,면"
+200,티라미수,양식,"lunch,dinner","고기,국물"
+201,떡볶이,분식,"breakfast,lunch","채소,담백,빨리"
+202,닭볶음탕,한식,"breakfast,lunch,dinner","가볍게,고기"
+203,파스타 ,양식,"lunch,dinner","채소,면"
+204,자루소바,일식,"lunch,dinner","가볍게,채소"
+205,훠궈소스,중식,"breakfast,lunch","채소,면"
+206,치킨샌드위치,양식,"lunch,dinner","고기,국물,면"
+207,팔락파니르,기타,"breakfast,lunch,dinner",국물
+208,고량주안주,중식,"lunch,dinner","밥,채소"
+209,가라아게 정식 ,일식,"lunch,dinner","매콤,고기"
+210,추어탕,한식,"lunch,dinner",고기
+211,떡국,한식,"breakfast,lunch,dinner",푸짐하게
+212,문어샐러드,기타,"breakfast,lunch,dinner","채소,면"
+213,튀김모둠 ,분식,"breakfast,lunch","채소,빨리"
+214,타코,기타,"breakfast,lunch,dinner",채소
+215,붕어빵,분식,"breakfast,lunch,dinner","면,빨리"
+216,된장찌개,한식,"breakfast,lunch,dinner","고기,국물"
+217,알리오올리오,양식,"lunch,dinner","담백,고기"
+218,난,기타,"lunch,dinner","채소,푸짐하게"
+219,유린기,중식,"breakfast,lunch","고기,국물"
+220,리소토,양식,"lunch,dinner",고기
+221,칼국수,한식,"lunch,dinner","채소,빨리"
+222,비프스튜,기타,"lunch,dinner",
+223,리조또,양식,"breakfast,lunch",
+224,북경오리,중식,"breakfast,lunch,dinner","달달,채소,빨리"
+225,봉골레 ,양식,"lunch,dinner",
+226,엽기떡볶이,분식,"breakfast,lunch,dinner",가볍게
+227,김밥,분식,"breakfast,lunch","밥,빨리"
+228,비빔밥 ,한식,"breakfast,lunch,dinner",밥
+229,브루스케타,양식,"breakfast,lunch,dinner",고기
+230,까르보나라,양식,"lunch,dinner",매콤
+231,가라아게 ,일식,"lunch,dinner",
+232,떡갈비,분식,"breakfast,lunch,dinner","고기,국물"
+233,그린커리,기타,"breakfast,lunch,dinner",채소
+234,오징어튀김,분식,"lunch,dinner",푸짐하게
+235,가이센동,일식,"breakfast,lunch,dinner","가볍게,채소"
+236,포케,기타,"breakfast,lunch,dinner","밥,채소"
+237,마라탕,중식,"lunch,dinner",국물
+238,포케 ,기타,"breakfast,lunch,dinner","밥,푸짐하게"
+239,크로켓,분식,"breakfast,lunch,dinner","밥,채소"
+240,애플파이,양식,"breakfast,lunch,dinner","면,빨리"
+241,샤와르마,기타,"breakfast,lunch,dinner","고기,국물,면"
+242,오야코동,일식,"lunch,dinner",
+243,동파육,중식,"breakfast,lunch,dinner","고기,빨리"
+244,규카츠,일식,"lunch,dinner",
+245,젤라또,양식,"lunch,dinner","매콤,국물"
+246,짜장밥,중식,"lunch,dinner",
+247,모츠나베,일식,"lunch,dinner",가볍게
+248,샌드위치,양식,"breakfast,lunch,dinner","고기,푸짐하게"
+249,계란빵,분식,"lunch,dinner","달달,푸짐하게,빨리"
+250,라자냐 ,양식,"lunch,dinner","달달,푸짐하게"
+251,갈비탕 ,한식,"breakfast,lunch,dinner","담백,국물"
+252,비빔라면 ,분식,"breakfast,lunch","채소,면,빨리"
+253,잡채,한식,"lunch,dinner","달달,푸짐하게"
+254,짬뽕,중식,"lunch,dinner","가볍게,고기,국물"
+255,해장국,한식,"lunch,dinner","밥,채소"
+256,스테이크 ,양식,"lunch,dinner",고기
+257,봉골레,양식,"lunch,dinner",
+258,떡볶이 ,분식,"breakfast,lunch","담백,고기,빨리"
+259,와플,양식,"lunch,dinner","밥,고기"
+260,깐풍기 ,중식,"lunch,dinner","담백,고기"
+261,치즈라면 ,분식,"breakfast,lunch","면,빨리"
+262,짜장면,중식,"lunch,dinner","달달,면"
+263,어묵탕,분식,"lunch,dinner",고기
+264,쫄면 ,분식,"breakfast,lunch","달달,가볍게,면,빨리"
+265,순대,분식,"breakfast,lunch","달달,채소,빨리"
+266,홍쇼로우,중식,"lunch,dinner","채소,면,빨리"
+267,로티,기타,"lunch,dinner",담백
+268,비빔밥,한식,"lunch,dinner","매콤,고기"
+269,쌀국수,기타,"lunch,dinner","매콤,고기"
+270,왕돈까스,분식,"lunch,dinner",면
+271,샐러드볼,기타,"breakfast,lunch,dinner",채소
+272,타코 ,기타,"breakfast,lunch,dinner","달달,고기"
+273,오차즈케,일식,"lunch,dinner","달달,가볍게,국물,면"
+274,하야시라이스,일식,"lunch,dinner","달달,면"
+275,파에야,기타,"lunch,dinner","매콤,푸짐하게"
+276,이카동,일식,"lunch,dinner",
+277,팔보채,중식,"breakfast,lunch","달달,면"
+278,난자완스,중식,"lunch,dinner","달달,채소"
+279,돈카츠,일식,"lunch,dinner",담백
+280,차우더,양식,"breakfast,lunch,dinner","가볍게,고기"
+281,순대볶음,분식,"breakfast,lunch,dinner","달달,가볍게,채소"
+282,설렁탕 ,한식,"breakfast,lunch,dinner","매콤,국물"
+283,볶음밥,중식,"lunch,dinner","달달,푸짐하게,빨리"
+284,크램차우더,기타,"breakfast,lunch","가볍게,채소,국물"
+285,참치초밥,일식,"breakfast,lunch",
+286,고구마튀김,분식,"breakfast,lunch,dinner","달달,고기"
+287,홍콩식토스트,중식,"lunch,dinner",담백
+288,청국장,한식,"breakfast,lunch,dinner","면,빨리"
+289,크림새우,중식,"lunch,dinner","가볍게,고기,국물"
+290,초밥,일식,"lunch,dinner","밥,고기,푸짐하게"
+291,라멘,일식,"lunch,dinner","달달,가볍게,국물,면"
+292,베이컨버거,양식,"lunch,dinner",푸짐하게
+293,약과,한식,"breakfast,lunch","매콤,면,빨리"
+294,바클라바,기타,"lunch,dinner",담백
+295,부리또,기타,"breakfast,lunch,dinner","가볍게,담백,고기"
+296,스키야키,일식,"breakfast,lunch,dinner","푸짐하게,채소,국물"
+297,순두부찌개,한식,"breakfast,lunch,dinner",국물
+298,된장찌개 ,한식,"breakfast,lunch,dinner","푸짐하게,채소,국물"
+299,레드커리,기타,"breakfast,lunch","가볍게,채소,국물,면"
+300,가츠동 ,일식,"lunch,dinner",매콤

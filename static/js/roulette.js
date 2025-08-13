@@ -1,10 +1,12 @@
 // 전역 변수
 let customMenus = [];
 let isSpinning = false;
+let spinTimer = null;
 
 // DOM 요소들
 const rouletteWheel = document.getElementById('rouletteWheel');
 const spinButton = document.getElementById('spinButton');
+const resetButton = document.getElementById('resetButton');
 const customMenuInput = document.getElementById('customMenuInput');
 const addMenuButton = document.getElementById('addMenuButton');
 const customMenusContainer = document.getElementById('customMenus');
@@ -60,7 +62,7 @@ function redrawRoulette() {
 
     const diameter = rouletteWheel.clientWidth || 360;
     const radius = diameter / 2;
-    const labelRadius = radius * 0.68;
+    const labelRadius = radius * 0.74;
 
     // 부모는 relative 보장
     if (getComputedStyle(rouletteWheel).position === 'static') {
@@ -72,19 +74,20 @@ function redrawRoulette() {
         const halfRad = Math.PI / count;             // 섹터 반각(라디안)
         // 현(Chord) 길이 = 라벨이 들어갈 수 있는 최대 가로폭
         const chord = 2 * labelRadius * Math.sin(halfRad);
-        const maxLabelWidth = Math.max(60, Math.floor(chord * 0.9));
+        const maxLabelWidth = Math.max(80, Math.floor(chord * 0.90)); // 최소 폭 80px로 늘림
 
         // 1) 앵커: 중심에서 '해당 각도'로 회전 후 위쪽(-Y)으로 labelRadius만큼 이동
         const anchor = document.createElement('div');
         anchor.className = 'label-anchor';
+
+
+
         Object.assign(anchor.style, {
             position: 'absolute',
-            top: '50%',
-            left: '50%',
-            width: 0,
-            height: 0,
-            transformOrigin: 'center',
-            transform: `translate(-50%, -50%) rotate(${angleDeg}deg) translate(0, -${labelRadius}px)`,
+            top: '0',
+            left: '0',
+            width: `${diameter}px`,
+            height: `${diameter}px`,
             pointerEvents: 'none',
             zIndex: 2,
         });
@@ -92,20 +95,45 @@ function redrawRoulette() {
         // 2) 실제 글자: 역회전으로 수평 유지 + 중앙선 기준으로 정확히 가운데
         const label = document.createElement('div');
         label.className = 'roulette-label';
-        label.textContent = String(items[i] ?? '');
+
+        const text = String(items[i] ?? '');
+        label.textContent = text;
+
+        // ✅ 2) 글자수/섹터수 기준 폰트 축소
+        let fs = 16;
+        if (text.length > 10) fs -= 4;
+        else if (text.length > 6) fs -= 2;
+        if (count >= 8) fs -= 2;
+        if (count >= 10) fs -= 2;
+        fs = Math.max(11, fs);
+        label.style.fontSize = `${fs}px`;   // 인라인으로 덮어쓰기
+
+        // 조각 중심 각도(라디안)
+        const theta = ((i + 0.5) / count) * 2 * Math.PI - Math.PI / 2;
+        // 라벨을 놓을 반경(조금 안쪽으로)
+        const rLabel = radius * 0.62;
+        // 극좌표 → (left, top)
+        const cx = radius + rLabel * Math.cos(theta);
+        const cy = radius + rLabel * Math.sin(theta);
+
+        // 해당 반경에서의 섹터 가로폭(현 길이)로 maxWidth 계산
+        const halfRad2 = Math.PI / count;
+        const chord2 = 2 * rLabel * Math.sin(halfRad2);
+        const maxW = Math.max(80, Math.floor(chord2 * 0.90));
+
+
         Object.assign(label.style, {
-            position: 'relative',
-            maxWidth: `${maxLabelWidth}px`,
-            transformOrigin: 'center',
-            transform: `rotate(${-angleDeg}deg) translateX(-50%)`,
-            left: '50%',                 // 중앙선에서 좌우 정렬 기준점 생성
+            position: 'absolute',
+            left: `${cx}px`,
+            top: `${cy}px`,
+            transform: 'translate(-50%, -50%)',  // 좌표를 중심 정렬
+            maxWidth: `${maxW}px`,
             textAlign: 'center',
-            whiteSpace: 'normal',
-            overflowWrap: 'anywhere',
-            wordBreak: 'keep-all',
+            whiteSpace: 'nowrap',
+            overflow: 'hidden',
+            textOverflow: 'ellipsis',
             lineHeight: '1.25',
             fontWeight: '700',
-            fontSize: '16px',
             color: '#333',
             textShadow: '1px 1px 2px rgba(255,255,255,0.85)',
             pointerEvents: 'none',
@@ -186,6 +214,16 @@ async function createRouletteWheel(menusFromUser = []) {
 function setupEventListeners() {
     spinButton.addEventListener('click', spinRoulette);
 
+    // ⬇️ 추가: 초기화 버튼
+    resetButton.addEventListener('click', () => {
+        // 필터/커스텀 메뉴는 유지하고 화면/상태만 리셋
+        resetRoulette({ keepFilters: true, keepCustomMenus: false });
+
+        // 완전 초기화가 필요하면 아래로 바꾸면 됨
+        // resetRoulette({ keepFilters: false, keepCustomMenus: false });
+    });
+
+
     addMenuButton.addEventListener('click', addCustomMenu);
     customMenuInput.addEventListener('keypress', function (e) {
         if (e.key === 'Enter') {
@@ -222,15 +260,34 @@ async function spinRoulette() {
     rouletteWheel.classList.add('spinning');
 
     // 3초 후 결과 표시
-    setTimeout(async () => {
-        // 현재 룰렛에 표시된 메뉴들 중에서 선택
-        const currentRouletteMenus = window.currentRouletteMenus || [];
+    spinTimer = setTimeout(async () => {
+        // 현재 실제 룰렛 아이템
+        const items = (window.rouletteState?.items || []).slice();
+        const count = items.length;
+        if (count > 0) {
+            const slice = 360 / count;
 
-        if (currentRouletteMenus.length > 0) {
-            const winner = currentRouletteMenus[Math.floor(Math.random() * currentRouletteMenus.length)];
-            showResult(winner);
+            // 최종 회전각(시계방향)
+            const spin = (totalRotation % 360 + 360) % 360;
+
+            // 바늘은 고정, 바퀴가 시계방향으로 돈 만큼을 반대로 환산
+            const wheelAngle = (360 - spin) % 360; // 0deg = 3시 기준
+
+            const POINTER_OFFSET_CCW = 52;
+
+
+            // 경계선 착오 방지용 작은 보정
+            const epsilon = 1e-6;
+
+            const adjusted = (wheelAngle + POINTER_OFFSET_CCW + epsilon) % 360;
+            const index = Math.floor(adjusted / slice) % count;
+            const winner = items[index];
+
+            alert(`축하합니다! 오늘의 메뉴는 🍽 ${winner} 입니다!`);
+            resultMenu.innerText = winner;
+            resultSection.style.display = "block";
+            showResult?.(winner);
         } else {
-            // 메뉴가 없으면 빈 룰렛만 돌림
             console.log('빈 룰렛이 돌아갑니다.');
         }
 
@@ -240,6 +297,7 @@ async function spinRoulette() {
 
         isSpinning = false;
         spinButton.disabled = false;
+        spinTimer = null;
     }, 3000);
 }
 
@@ -288,4 +346,43 @@ document.getElementById('filterButton').addEventListener('click', async () => {
         console.error(err);
         alert('스핀 요청에 실패했습니다. 잠시 후 다시 시도하세요.');
     }
+
 });
+
+// ===== 전체 초기화(모두 지우기) =====
+    function resetRoulette({ keepFilters = true, keepCustomMenus = true } = {}) {
+        // 1) 회전 중단
+        if (spinTimer) { clearTimeout(spinTimer); spinTimer = null; }
+        rouletteWheel.classList.remove('spinning');
+
+        // 2) 바퀴 각도/트랜지션 리셋
+        rouletteWheel.style.transition = 'none';
+        rouletteWheel.style.transform = 'rotate(0deg)';
+        void rouletteWheel.offsetHeight;   // reflow
+        rouletteWheel.style.transition = '';
+
+        // 3) 라벨 제거
+        rouletteWheel.querySelectorAll('.roulette-label, .label-anchor')
+            .forEach(el => el.remove());
+
+        // 4) 상태/버튼/결과 UI 리셋
+        isSpinning = false;
+        spinButton.disabled = false;
+        if (resultMenu) resultMenu.innerText = '';
+        if (resultSection) resultSection.style.display = 'none';
+
+        // 5) 데이터 리셋(옵션)
+        if (!keepCustomMenus) {
+            window.rouletteState.items = [];
+            window.currentRouletteMenus = [];
+        }
+
+        // 6) 필터 리셋(옵션)
+        if (!keepFilters) {
+            document.querySelectorAll('.filter-section input[type="checkbox"]')
+                .forEach(chk => { chk.checked = true; });
+        }
+
+        // 7) 다시 그리기
+        redrawRoulette();
+    }
