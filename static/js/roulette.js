@@ -25,6 +25,163 @@ async function initializeRoulette() {
     await createRouletteWheel([]);
 }
 
+// ===== 전역 상태 =====
+const MAX_SECTORS = 10;
+const baseColors = ['#87ceeb', '#ffd700', '#9370db', '#98fb98', '#ffa500',
+    '#ff6b6b', '#20b2aa', '#ff69b4', '#32cd32', '#ff4500'];
+const colors = baseColors.slice();
+// Fisher–Yates shuffle (색상 랜덤)
+for (let i = colors.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [colors[i], colors[j]] = [colors[j], colors[i]];
+}
+
+
+// 상태 컨테이너
+window.rouletteState = {
+    items: [],             // 현재 섹터에 들어간 텍스트 목록
+    colors,                // 셔플된 색상들
+};
+
+// ===== 공용: 다시 그리기 =====
+function redrawRoulette() {
+    const items = window.rouletteState.items;
+    const count = Math.max(items.length, 1); // 최소 1로 처리
+    // 배경 conic-gradient
+    const colorStops = Array.from({ length: count }, (_, i) => {
+        const startPct = (i / count) * 100;
+        const endPct = ((i + 1) / count) * 100;
+        const color = window.rouletteState.colors[i % window.rouletteState.colors.length];
+        return `${color} ${startPct}% ${endPct}%`;
+    }).join(', ');
+    rouletteWheel.style.background = `conic-gradient(${colorStops})`;
+
+    rouletteWheel.querySelectorAll('.roulette-label, .label-anchor').forEach(el => el.remove());
+
+    const diameter = rouletteWheel.clientWidth || 360;
+    const radius = diameter / 2;
+    const labelRadius = radius * 0.68;
+
+    // 부모는 relative 보장
+    if (getComputedStyle(rouletteWheel).position === 'static') {
+        rouletteWheel.style.position = 'relative';
+    }
+
+    for (let i = 0; i < count; i++) {
+        const angleDeg = (360 * (i + 0.5)) / count;   // 섹터 중앙 각도
+        const halfRad = Math.PI / count;             // 섹터 반각(라디안)
+        // 현(Chord) 길이 = 라벨이 들어갈 수 있는 최대 가로폭
+        const chord = 2 * labelRadius * Math.sin(halfRad);
+        const maxLabelWidth = Math.max(60, Math.floor(chord * 0.9));
+
+        // 1) 앵커: 중심에서 '해당 각도'로 회전 후 위쪽(-Y)으로 labelRadius만큼 이동
+        const anchor = document.createElement('div');
+        anchor.className = 'label-anchor';
+        Object.assign(anchor.style, {
+            position: 'absolute',
+            top: '50%',
+            left: '50%',
+            width: 0,
+            height: 0,
+            transformOrigin: 'center',
+            transform: `translate(-50%, -50%) rotate(${angleDeg}deg) translate(0, -${labelRadius}px)`,
+            pointerEvents: 'none',
+            zIndex: 2,
+        });
+
+        // 2) 실제 글자: 역회전으로 수평 유지 + 중앙선 기준으로 정확히 가운데
+        const label = document.createElement('div');
+        label.className = 'roulette-label';
+        label.textContent = String(items[i] ?? '');
+        Object.assign(label.style, {
+            position: 'relative',
+            maxWidth: `${maxLabelWidth}px`,
+            transformOrigin: 'center',
+            transform: `rotate(${-angleDeg}deg) translateX(-50%)`,
+            left: '50%',                 // 중앙선에서 좌우 정렬 기준점 생성
+            textAlign: 'center',
+            whiteSpace: 'normal',
+            overflowWrap: 'anywhere',
+            wordBreak: 'keep-all',
+            lineHeight: '1.25',
+            fontWeight: '700',
+            fontSize: '16px',
+            color: '#333',
+            textShadow: '1px 1px 2px rgba(255,255,255,0.85)',
+            pointerEvents: 'none',
+        });
+
+        anchor.appendChild(label);
+        rouletteWheel.appendChild(anchor);
+    }
+
+}
+
+// ===== 전체 초기화(모두 지우기) =====
+function resetRoulette() {
+    window.rouletteState.items = [];
+    redrawRoulette();
+    window.currentRouletteMenus = [];
+}
+
+// ===== 섹터 하나 추가 (중복 방지, 초과 시 FIFO 제거) =====
+function addSector(name) {
+    const text = String(name ?? '').trim();
+    if (!text) return;
+
+    const items = window.rouletteState.items;
+
+    // 이미 있으면 패스(원하면 허용하도록 조건 제거)
+    if (items.includes(text)) return;
+
+    // 초과 시 앞(가장 오래된) 제거해서 고정 크기 유지
+    if (items.length >= MAX_SECTORS) items.shift();
+
+    items.push(text);
+    redrawRoulette();
+
+    // 동기화
+    window.currentRouletteMenus = items.slice();
+}
+
+// ===== 초기화(서버/사용자 메뉴로 채우고 시작할 때 0~N개 세팅) =====
+async function createRouletteWheel(menusFromUser = []) {
+    // 바탕 초기화
+    rouletteWheel.innerHTML = '';
+    window.rouletteState.items = []; // 초기화
+
+    // 필요하면 서버 메뉴로 시드 채우기
+    let serverMenus = [];
+    try {
+        const res = await fetch('/api/menus');
+        if (res.ok) {
+            const data = await res.json();
+            serverMenus = (data.menus || [])
+                .map(m => (m && (m.name ?? m)) || '')
+                .filter(Boolean);
+        }
+    } catch (e) {
+        console.error('서버 메뉴 로드 실패:', e);
+    }
+
+    // 유저 + 서버 합치고 중복 제거
+    const allMenus = [...menusFromUser, ...serverMenus]
+        .map(s => String(s).trim())
+        .filter(Boolean);
+    const uniqueMenus = [...new Set(allMenus)];
+
+    // 초기 배치(원하면 0개 시작도 가능)
+    // 여기서는 '최대 10개'까지 채워 시작 — 필요없으면 이 루프 지워도 됨
+    for (const name of uniqueMenus.slice(0, MAX_SECTORS)) {
+        window.rouletteState.items.push(name);
+    }
+    redrawRoulette();
+
+    // 외부에서 접근할 수 있게
+    window.currentRouletteMenus = window.rouletteState.items.slice();
+}
+
+
 // 이벤트 리스너 설정
 function setupEventListeners() {
     spinButton.addEventListener('click', spinRoulette);
@@ -42,100 +199,6 @@ function setupEventListeners() {
     document.querySelectorAll('.filter-option input[type="checkbox"]').forEach(checkbox => {
         checkbox.addEventListener('change', updateRouletteFromFilters);
     });
-}
-
-// 룰렛 휠 생성 (동일 섹터/가변 개수/텍스트 줄바꿈)
-async function createRouletteWheel(menusFromUser = []) {
-    // 바탕 초기화 (기존 segment div 전부 제거)
-    rouletteWheel.innerHTML = '';
-
-    // 기본 색상 팔레트
-    const baseColors = ['#87ceeb', '#ffd700', '#9370db', '#98fb98', '#ffa500',
-        '#ff6b6b', '#20b2aa', '#ff69b4', '#32cd32', '#ff4500'];
-
-    // 색상 셔플 (Fisher–Yates)
-    const colors = baseColors.slice();
-    for (let i = colors.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [colors[i], colors[j]] = [colors[j], colors[i]];
-    }
-
-    // 서버 메뉴 로드
-    let serverMenus = [];
-    try {
-        const res = await fetch('/api/menus');
-        if (res.ok) {
-            const data = await res.json();
-            serverMenus = (data.menus || []).map(m => (m && (m.name ?? m)) || '').filter(Boolean);
-        }
-    } catch (e) {
-        console.error('서버 메뉴 로드 실패:', e);
-    }
-
-    // 사용자 + 서버 메뉴 합치고 중복 제거/공백 트림
-    const allMenus = [...menusFromUser, ...serverMenus]
-        .map(s => String(s).trim())
-        .filter(Boolean);
-    const uniqueMenus = [...new Set(allMenus)];
-
-    // 이번 라운드에 사용할 섹터 수(최대 10개). 0개면 예비 10칸.
-    const count = Math.min(10, uniqueMenus.length) || 10;
-
-    // 메뉴 무작위 선택 (중복 없이)
-    const pool = uniqueMenus.slice();
-    for (let i = pool.length - 1; i > 0; i--) { // 셔플
-        const j = Math.floor(Math.random() * (i + 1));
-        [pool[i], pool[j]] = [pool[j], pool[i]];
-    }
-    const selectedMenus = pool.slice(0, count);
-
-    // conic-gradient로 동일 크기 섹터 칠하기 (퍼센트 사용 → 반올림오차 방지)
-    const colorStops = Array.from({ length: count }, (_, i) => {
-        const startPct = (i / count) * 100;
-        const endPct = ((i + 1) / count) * 100;
-        const color = colors[i % colors.length];
-        return `${color} ${startPct}% ${endPct}%`;
-    }).join(', ');
-    rouletteWheel.style.background = `conic-gradient(${colorStops})`;
-
-    // 라벨 배치
-    const diameter = rouletteWheel.clientWidth || 360;   // width=height 가정
-    const radius = diameter / 2;
-    const labelRadius = radius * 0.68;                   // 섹터 중앙쯤
-    const labelWidth = Math.max(80, Math.floor(radius * 0.9)); // 텍스트 박스 폭
-
-    // 기존 라벨 제거
-    rouletteWheel.querySelectorAll('.roulette-label,.segment-text').forEach(el => el.remove());
-
-    for (let i = 0; i < count; i++) {
-        const angle = (360 * (i + 0.5)) / count;           // 섹터 중앙 각도
-        const label = document.createElement('div');
-        label.className = 'roulette-label';                // 새 클래스(없으면 inline 스타일이 적용됨)
-        label.textContent = selectedMenus[i] || '';
-        Object.assign(label.style, {
-            position: 'absolute',
-            top: '50%',
-            left: '50%',
-            width: `${labelWidth}px`,
-            transformOrigin: 'center',
-            transform: `translate(-50%, -50%) rotate(${angle}deg) translate(${labelRadius}px) rotate(${-angle}deg)`,
-            whiteSpace: 'normal',
-            wordBreak: 'keep-all',
-            overflowWrap: 'anywhere',
-            lineHeight: '1.25',
-            textAlign: 'center',
-            fontWeight: '700',
-            fontSize: '16px',
-            color: '#333',
-            textShadow: '1px 1px 2px rgba(255,255,255,0.8)',
-            pointerEvents: 'none',
-            zIndex: '2'
-        });
-        rouletteWheel.appendChild(label);
-    }
-
-    // 외부에서 접근할 선택 결과
-    window.currentRouletteMenus = selectedMenus;
 }
 
 
@@ -180,165 +243,49 @@ async function spinRoulette() {
     }, 3000);
 }
 
-// 현재 메뉴 목록 가져오기
-function getCurrentMenus() {
-    const menus = [];
-
-    // 서버에서 가져온 메뉴들 (필터 적용)
-    const serverMenus = getFilteredServerMenus();
-    menus.push(...serverMenus);
-
-    // 사용자가 추가한 메뉴들
-    menus.push(...customMenus);
-
-    return menus;
+function getCheckedValues(containerId) {
+    return [...document.querySelectorAll(`#${containerId} input[type="checkbox"]:checked`)]
+        .map(el => el.value);
 }
 
-// 필터된 서버 메뉴 가져오기
-function getFilteredServerMenus() {
-    // 실제로는 서버 API를 호출해야 하지만, 여기서는 빈 배열 반환
-    const selectedCategories = getSelectedCategories();
-    const selectedMeals = getSelectedMeals();
-
-    // 빈 배열 반환 (사용자가 직접 메뉴를 추가해야 함)
-    return [];
+// (옵션) 스핀 결과 처리 — 그대로
+function onSpinResult(result) {
+    console.log('메뉴 랜덤 출력 결과:', result);
+    const name = result?.name ?? result?.menu ?? result;
+    if (!name) return;
+    addSector(name); // ✅ 결과가 들어올 때마다 섹터 1개 추가
+    // 선택적으로 알림
+    // alert(`랜덤 메뉴: ${name}`);
 }
 
-// 선택된 카테고리 가져오기
-function getSelectedCategories() {
-    const categories = [];
-    document.querySelectorAll('.filter-group:first-child input[type="checkbox"]:checked').forEach(checkbox => {
-        categories.push(checkbox.value);
-    });
-    return categories;
-}
+document.getElementById('filterButton').addEventListener('click', async () => {
+    const selectedCategories = getCheckedValues('categoryFilters');
+    const selectedMeals = getCheckedValues('mealFilters');
 
-// 선택된 식사시간 가져오기
-function getSelectedMeals() {
-    const meals = [];
-    document.querySelectorAll('.filter-group:last-child input[type="checkbox"]:checked').forEach(checkbox => {
-        meals.push(checkbox.value);
-    });
-    return meals;
-}
+    const payload = {
+        category: selectedCategories[0] ?? null, // 첫 번째 선택 또는 null
+        meal: selectedMeals[0] ?? null
+    };
 
-// 랜덤 메뉴 선택
-async function getRandomMenu(menus) {
-    // 사용자 메뉴가 있으면 클라이언트에서 랜덤 선택
-    if (customMenus.length > 0) {
-        return menus[Math.floor(Math.random() * menus.length)];
-    }
 
-    // 서버 메뉴만 있으면 서버 API 호출
+    console.log('payload:', payload);
+
     try {
-        const selectedCategories = getSelectedCategories();
-        const selectedMeals = getSelectedMeals();
-
-        const response = await fetch('/api/spin', {
+        // ✅ 3) POST /api/spin (배열 전송)
+        const res = await fetch('/api/spin', {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                category: selectedCategories.length > 0 ? selectedCategories[0] : null,
-                meal: selectedMeals.length > 0 ? selectedMeals[0] : null
-            })
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
         });
 
-        if (response.ok) {
-            const data = await response.json();
-            return data.winner.name;
-        } else {
-            // 서버 에러 시 클라이언트에서 랜덤 선택
-            return menus[Math.floor(Math.random() * menus.length)];
-        }
-    } catch (error) {
-        console.error('서버 API 호출 실패:', error);
-        // 에러 시 클라이언트에서 랜덤 선택
-        return menus[Math.floor(Math.random() * menus.length)];
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
+        // 4) 응답 처리
+        const data = await res.json();
+        const result = data.result ?? data.item ?? data.winner ?? data;
+        onSpinResult(result);
+    } catch (err) {
+        console.error(err);
+        alert('스핀 요청에 실패했습니다. 잠시 후 다시 시도하세요.');
     }
-}
-
-// 결과 표시
-function showResult(menu) {
-    resultMenu.textContent = menu;
-    resultSection.style.display = 'block';
-
-    // 결과 섹션을 화면 중앙에 스크롤
-    resultSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
-}
-
-// 사용자 메뉴 추가
-function addCustomMenu() {
-    const input = customMenuInput.value.trim();
-    if (!input) return;
-
-    // 쉼표로 구분된 메뉴들 분리
-    const menus = input.split(',').map(menu => menu.trim()).filter(menu => menu);
-
-    menus.forEach(menu => {
-        if (menu && !customMenus.includes(menu)) {
-            customMenus.push(menu);
-        }
-    });
-
-    updateCustomMenusDisplay();
-    updateRouletteFromCustomMenus();
-
-    customMenuInput.value = '';
-}
-
-// 사용자 메뉴 표시 업데이트
-function updateCustomMenusDisplay() {
-    customMenusContainer.innerHTML = '';
-
-    customMenus.forEach((menu, index) => {
-        const menuItem = document.createElement('div');
-        menuItem.className = 'custom-menu-item';
-        menuItem.innerHTML = `
-            <span>${menu}</span>
-            <button class="remove-menu" onclick="removeCustomMenu(${index})">×</button>
-        `;
-        customMenusContainer.appendChild(menuItem);
-    });
-}
-
-// 사용자 메뉴 제거
-function removeCustomMenu(index) {
-    customMenus.splice(index, 1);
-    updateCustomMenusDisplay();
-    updateRouletteFromCustomMenus();
-}
-
-// 사용자 메뉴 모두 지우기
-function clearCustomMenus() {
-    customMenus = [];
-    updateCustomMenusDisplay();
-    updateRouletteFromCustomMenus();
-}
-
-// 필터 변경 시 룰렛 업데이트
-async function updateRouletteFromFilters() {
-    await createRouletteWheel([]);
-}
-
-// 사용자 메뉴 변경 시 룰렛 업데이트
-async function updateRouletteFromCustomMenus() {
-    await createRouletteWheel([]);
-}
-
-// 초기 메뉴 로드 (서버에서)
-async function loadInitialMenus() {
-    try {
-        const response = await fetch('/api/menus');
-        if (response.ok) {
-            const data = await response.json();
-            // 서버에서 받은 메뉴들로 룰렛 업데이트 (필요시)
-            console.log('서버에서 메뉴 로드됨:', data.count);
-        }
-    } catch (error) {
-        console.error('초기 메뉴 로드 실패:', error);
-    }
-}
-
-
+});
