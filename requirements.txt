@@ -1,3 +1,4 @@
 fastapi           # 최신 안정판
 uvicorn[standard] # uvicorn + 성능/개발에 유용한 추가 의존성
 pydantic          # 데이터 검증/스키마
+jinja2            # HTML 템플릿 엔진

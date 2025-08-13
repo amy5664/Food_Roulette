@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오늘 메뉴 룰렛</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- 로고 섹션 -->
+        <div class="logo-section">
+            <div class="logo">
+                <img src="/static/img/logo.png" alt="오늘 뭐 먹지?" class="logo-image">
+            </div>
+        </div>
+
+        <!-- 룰렛 섹션 -->
+        <div class="roulette-section">
+            <h1 class="title">
+                <span class="title-text">오늘 메뉴 룰렛 돌리기</span>
+            </h1>
+
+            <div class="roulette-container">
+                <div class="roulette-wheel" id="rouletteWheel">
+                    <!-- 룰렛 세그먼트들이 JavaScript로 동적 생성됩니다 -->
+                </div>
+                <div class="roulette-pointer"></div>
+            </div>
+
+            <div class="roulette-controls">
+                <button class="spin-button" id="spinButton">
+                    <span class="spin-icon">🔄</span>
+                    <span class="spin-text">룰렛 돌리기</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- 필터 섹션 -->
+        <div class="filter-section">
+            <div class="filter-group">
+                <h3 class="filter-title">음식 종류별 고르기</h3>
+                <div class="filter-options">
+                    <label class="filter-option">
+                        <input type="checkbox" value="베스트" checked>
+                        <span class="checkbox-custom">✓</span>
+                        <span class="option-text">베스트</span>
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" value="한식" checked>
+                        <span class="checkbox-custom">✓</span>
+                        <span class="option-text">한식</span>
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" value="중식" checked>
+                        <span class="checkbox-custom">✓</span>
+                        <span class="option-text">중식</span>
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" value="일식" checked>
+                        <span class="checkbox-custom">✓</span>
+                        <span class="option-text">일식</span>
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" value="양식" checked>
+                        <span class="checkbox-custom">✓</span>
+                        <span class="option-text">양식</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <h3 class="filter-title">상황별 고르기</h3>
+                <div class="filter-options">
+                    <label class="filter-option">
+                        <input type="checkbox" value="아침" checked>
+                        <span class="checkbox-custom">✓</span>
+                        <span class="option-text">아침</span>
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" value="점심" checked>
+                        <span class="checkbox-custom">✓</span>
+                        <span class="option-text">점심</span>
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" value="저녁" checked>
+                        <span class="checkbox-custom">✓</span>
+                        <span class="option-text">저녁</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- 사용자 입력 섹션 -->
+        <div class="custom-section">
+            <h3 class="section-title">직접 메뉴 입력하기</h3>
+            <div class="custom-input-container">
+                <div class="input-group">
+                    <input type="text" id="customMenuInput" placeholder="메뉴 이름을 입력하세요 (예: 떡갈비, 육문, 잡채밥)">
+                    <button id="addMenuButton" class="add-button">추가</button>
+                </div>
+                <div class="custom-menus" id="customMenus">
+                    <!-- 사용자가 추가한 메뉴들이 여기에 표시됩니다 -->
+                </div>
+                <button id="clearCustomButton" class="clear-button">모두 지우기</button>
+            </div>
+        </div>
+
+        <!-- 결과 표시 -->
+        <div class="result-section" id="resultSection" style="display: none;">
+            <div class="result-card">
+                <h2 class="result-title">오늘의 메뉴는?</h2>
+                <div class="result-menu" id="resultMenu"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/roulette.js"></script>
+</body>
+
+</html>
