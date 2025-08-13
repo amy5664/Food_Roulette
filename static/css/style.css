@@ -88,12 +88,7 @@ body {
     left: 50%;
     transform-origin: center;
     /* 줄바꿈/가독성 */
-    white-space: normal;
-    /* 줄바꿈 허용 */
-    word-break: keep-all;
-    /* 한글 단어 단위 유지 */
-    overflow-wrap: anywhere;
-    /* 너무 긴 단어 강제 줄바꿈 */
+    white-space: nowrap;
     line-height: 1.25;
     text-align: center;
     font-weight: 700;
